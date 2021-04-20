@@ -1,0 +1,960 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: #292929 !important;
+}
+/* ===============MENU=================== */
+.bg-gray-800 {
+    height: 190px;
+    background-color: #292929 !important;
+    z-index: 8;
+    /* display: flex; */
+    padding: 3rem;
+}
+
+.bg-gray-800 img {
+    height: auto;
+    width: 200px
+}
+
+.bg-gray-800 .dropdown-menu {
+    width: 100px;
+    cursor: pointer;
+    z-index: 12
+}
+
+.bg-gray-800 .dropdown-menu p {
+    color: white;
+    font-size: 14px;
+}
+
+.bg-gray-800 .dropdown-menu .close-menu {
+    display: none;
+    color: black;
+}
+
+.bg-gray-800 .dropdown-menu .fal {
+    color: white;
+    visibility: hidden;
+}
+
+.bg-gray-800 .dropdown-menu .rounded-full {
+    width: 25px;
+    height: 25px;
+    background-color: #0B6354;
+    transition: .3s
+}
+
+.bg-gray-800 .dropdown-menu .rounded-full:focus {
+    outline: none;
+}
+
+.bg-gray-800 .dropdown-menu .small {
+    transform: scale( .9, .9)
+}
+/*==============INNER MENU OVERLAY==============*/
+.dropdown-inner {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    display: none !important;
+    transition: .3s ease !important;
+}
+
+.dropdown-inner .menu {
+    color: black;
+    font-family: 'Forum';
+    font-size: 72px;
+    height: 100%;
+    width: 50%;
+    padding: 200px 10px 50px 250px;
+}
+
+.dropdown-inner .menu ul li a {
+    position: relative;
+}
+
+.dropdown-inner .menu ul li a:before {
+    content: '';
+    width: 0;
+    height: 1.3px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    transition: .3s ease
+}
+
+.dropdown-inner .menu ul li a:hover:before {
+    width: 100%;
+    transition: .3s ease
+}
+
+.dropdown-inner .symbolic-image {
+    color: #505050;
+    font-family: 'Sarabun';
+    height: 100%;
+    width: 50%;
+    /* padding: 120px 10px 20px 190px; */
+}
+
+.dropdown-inner .symbolic-image img {
+    margin-bottom: 14px;
+}
+
+.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: .3s ease;
+    display: block !important;
+}
+
+.visible-1 {
+    display: flex !important;
+    flex-direction: row;
+    z-index: 11
+}
+.invisible {
+    display: none !important
+}
+
+.rounded-full.ml-1 {
+    margin-left: 5px !important
+}
+.antialiased {
+    width: 500px;
+}
+
+.dropdown-inner .menu ul li a:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    animation: overlay .4s ease forwards;
+}
+@keyframes overlay{
+    30%{
+        left: 0;
+        width: 100%;
+    }
+    100%{
+        left: 100%;
+        width: 0;
+    }
+}
+.dropdown-inner .menu ul li{
+    animation: left-to-right-li .6s ease forwards;
+    position: relative;
+}
+@keyframes left-to-right-li{
+    0%{
+        transform: translateX(-120px)
+    }
+    100%{
+        transform: translateX(0)
+    }
+}
+.dropdown-inner .menu ul li:nth-child(1){
+    animation-delay: 0s
+}
+.dropdown-inner .menu ul li:nth-child(2){
+    animation-delay: .1s
+}
+.dropdown-inner .menu ul li:nth-child(3){
+    animation-delay: .2s
+}
+.dropdown-inner .menu ul li:nth-child(4){
+    animation-delay: .3s
+}
+.dropdown-inner .menu ul li:nth-child(5){
+    animation-delay: .4s
+}
+.dropdown-inner .menu ul li:nth-child(1) a:after{
+    animation-delay: 0s
+}
+.dropdown-inner .menu ul li:nth-child(2) a:after{
+    animation-delay: .2s
+}
+.dropdown-inner .menu ul li:nth-child(3) a:after{
+    animation-delay: .3s
+}
+.dropdown-inner .menu ul li:nth-child(4) a:after{
+    animation-delay: .4s
+}
+.dropdown-inner .menu ul li:nth-child(5) a:after{
+    animation-delay: .5s
+}
+.symbolic-image{ position: relative}
+.symbolic-image .image{ position: relative;}
+.symbolic-image .image:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: image-overlay 1s ease forwards
+}
+
+@keyframes image-overlay{
+    0%{
+        height: 100%;
+        top: 0;
+    }
+    100%{
+        height: 0;
+        top: 100%;
+    }
+}
+
+.symbolic-image .image-capture{
+    opacity: 0;
+    animation: text-delay .5s ease forwards;
+    animation-delay: .5s
+}
+@keyframes text-delay {
+    50%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* ====================BOOK SECTION=================== */
+.book-section{
+    background-color: white;
+    max-width: 80vw !important;
+    display: flex;
+    max-height: 800px;
+    overflow: hidden;
+    /* padding: 49px 0; */
+}
+.book-section .slide{
+    /* width: 65%; */
+    display: block !important;
+    position: relative;
+}
+.book-section .slick-slide{
+    height: 100% !important;
+}
+.book-section .slide img{
+    height: 100%;
+}
+.book-section .slick-dots{
+    position: absolute;
+    left: 4%;
+    bottom: 5%;
+    display: flex;
+}
+.book-section .slick-dots li{
+    width: 50px;
+    position: relative
+}
+.book-section .slick-dots li button{
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 3;
+    color: white;
+    font-weight: 500;
+}
+.book-section .slick-dots li button:focus{
+    outline: none;
+}
+.book-section .slick-dots li button:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color:white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: .3;
+    transition: .3s ease
+}
+.book-section .slick-dots .slick-active button:after{
+    opacity: 1;
+    transition: .3s ease
+}
+.book-section .slick-dots li button:hover:after{
+    opacity: 1;
+    transition: .3s ease
+}
+
+.book-section .date-picker .bg-gray-200{
+    height: 100px;
+    background: transparent;
+    width: 100%;
+}
+.book-section .slide-item{
+    color: white;
+    text-align: right;
+    height: 70vh !important;
+}
+.book-section .slide-item h1{ 
+    font-size: 60px;
+    font-family: "Forum";
+    position: absolute;
+    right: 3%;
+    bottom: 0%;
+    opacity: 0
+}
+.book-section .slide-item p{ 
+    font-size: 18px;
+    font-family: "Sarabun";
+    position: absolute;
+    right: 3%;
+    bottom: 0%;
+    opacity: 0;
+}
+
+.book-section .slide-item h1{
+    animation: fade-down-h1 .9s ease forwards ;
+}
+.book-section .slick-active p{
+    animation: fade-down-p .9s ease forwards ;
+    animation-delay: .2s
+}
+@keyframes fade-down-h1{
+    0%{
+        opacity: 1;
+        bottom: 8%;
+    }
+    100%{
+        opacity: 0;
+        bottom: 0
+    }
+}
+@keyframes fade-down-p{
+    0%{
+        opacity: 1;
+        bottom: 5%;
+    }
+    100%{
+        opacity: 0;
+        bottom: 0
+    }
+}
+
+.book-section .slick-active h1{
+    animation: fade-up-h1 .9s ease forwards !important;
+}
+.book-section .slick-active p{
+    animation: fade-up-p .9s ease forwards !important;
+    animation-delay: .2s
+}
+@keyframes fade-up-h1{
+    0%{
+        opacity: 0;
+        bottom: 0;
+    }
+    100%{
+        opacity: 1;
+        bottom: 8%
+    }
+}
+@keyframes fade-up-p{
+    0%{
+        opacity: 0;
+        bottom: 0;
+    }
+    100%{
+        opacity: 1;
+        bottom: 5%
+    }
+}
+.book-section .slide-item:nth-child(1){
+    background: url('../IMG/book-slide-1.jpg');
+    background-size: contain;
+    background-position-y: 50px 50px;
+}
+.book-section .slide-item:nth-child(2){
+    background: url('../IMG/book-slide-2.jpg') no-repeat;
+}
+.book-section .slide-item:nth-child(3){
+    background: url('../IMG/book-slide-303.jpg') no-repeat;
+}
+.antialiased .relative input{
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    position: relative;
+    border-bottom: 1px solid #c4c4c4;
+    border-radius: 0;
+    height: 50px;
+    font-size: 26px;
+    font-family: "Forum";
+    color: #161717;
+    cursor: pointer;
+    transition: .3s ease
+}
+.book-section .date-picker{
+    /* width: 35%; */
+    padding: 0 40px;
+    background: #e4e6e9;
+}
+.book-section .date-picker .antialiased .relative input:hover{
+    border-bottom: 1.5px solid black;
+    transition: .3s ease
+}
+.book-section .date-picker .antialiased .container{
+    padding: 0;
+}
+.book-section .date-picker .bg-white{
+    z-index: 15
+}
+.book-section .date-picker p{
+    font-size: 52px;
+    font-family: "Forum";
+    margin-bottom: 15px
+}
+.book-section .date-picker .antialiased label{
+    color: #0b6354;
+    letter-spacing: 2.5px;
+    font-family: "Sarabun";
+    font-size: 13px;
+    font-weight: 500
+}
+.book-section .date-picker .around-button{
+    width: 100%;
+    position: relative;
+    height: 11%;
+}
+.book-section .date-picker .book{
+    background-color: #0B6354;
+    color: white;
+    font-family: "sarabun";
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    width: 100%;
+    height: 95%;
+    position: relative
+}
+.book-section .date-picker .around-button:after{
+    content: '';
+    background-color: #0b6354;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.book-section .date-picker .around-button:before{
+    content: '';
+    background-color: #0b6354;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.book-section .date-picker .around-button:hover:after{
+    animation: left-to-right .4s ease forwards;
+}
+.book-section .date-picker .around-button:hover:before{
+    animation: right-to-left .7s ease forwards;
+}
+@keyframes left-to-right{
+    0%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes right-to-left{
+    50%{
+        width: 0;
+        right: 100%;
+    }
+    100%{
+        width: 100%;
+        right: 0;
+    }
+}
+
+/* =============OFFER SECTION================ */
+.offer-section{
+    max-width: 80vw !important;
+    max-height: 160vh;
+    color: white;
+    margin-bottom: 50px;
+    font-family: "Forum";
+}
+.offer-section .inner{
+    max-height: 80vh;
+}
+.offer-section p{
+    color: #bababa;
+    font-family: "Sarabun" !important;
+}
+.offer-section .title h1{
+    font-size: 50px;
+}
+.offer-section .title h4{
+    font-family: "Sarabun";
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+
+}
+.offer-section .title h4::before{
+    content: '';
+    width: 30%;
+    height: 1px;
+    position: absolute;
+    top: -40px;
+    left: 35%;
+    background: white;
+    transform: rotate(90deg);
+}
+.offer-section .text-container h2{
+    font-size: 30px;
+    transition: .3s ease;
+}
+.offer-section .text-container h2:hover{
+    color: #0b6354;
+    transition: .3s ease;
+}
+.offer-section .inner-center img{
+    display: block;
+}
+.offer-section .title p{
+    font-size: 20px;
+    line-height: 30px;
+}
+.offer-section .text-container p{
+    margin-bottom: 2rem;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+/* ================OFFER EXAMPLE================= */
+.offer-example{ position: relative}
+.offer-example .card-detail{
+    position: relative;
+    width: 27vw;
+}
+.offer-example .title .offer-slide-title:before{
+    left: -22px
+}
+.offer-example .card-detail .background{ 
+    position: relative;
+    overflow: hidden
+}
+.offer-example .card-detail .background .price{
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    width: 130px;
+    height: 60px;
+    backdrop-filter: blur(8px);
+    color: white;
+}
+.offer-example .card-detail .white{
+    color: white
+} 
+.offer-example .card-detail .background img{
+    transition: .5s ease
+}
+.offer-example .card-detail .background img:hover{ 
+    transform: scale(1.1, 1.1);
+    transition: .5s ease;
+}
+.offer-sexample .card-detail .background .price:focus{
+    outline: none;
+}
+.offer-example .card-detail h1{font-size: 32px;}
+.offer-example .card-detail .book-suite{
+    font-family: "Sarabun";
+    font-size: 14px;
+    position: relative;
+}
+.offer-example .card-detail .book-suite:focus{ outline: none}
+.offer-example .card-detail .book-suite:after{
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+.offer-example .card-detail .book-suite:before{
+    content: '';
+    background-color: white;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+}
+.offer-example .card-detail .book-suite:hover:after{
+    animation: left-to-right .4s ease forwards;
+}
+.offer-example .card-detail .book-suite:hover:before{
+    animation: right-to-left .7s ease forwards;
+}
+@keyframes left-to-right{
+    0%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes right-to-left{
+    50%{
+        width: 0;
+        right: 100%;
+    }
+    100%{
+        width: 100%;
+        right: 0;
+    }
+}
+
+/* =============DISCOVER SECTION================ */
+
+.discover .inner-left{
+    background-color: #e4e6e9;
+    position: relative;
+    width: 35%;
+}
+.discover h4,
+.discover .discover-button{
+    font-family: "Sarabun"
+}
+.discover h1{
+    font-size: 50px;
+    color: black
+}
+.discover p{
+    color: grey;
+    letter-spacing: 1px
+}
+
+.discover h4{
+    color: #0b6354;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: 400;
+    position: relative;
+}
+.discover h4:before{
+    content: '';
+    width: 8%;
+    height: 1.2px;
+    background-color: #bababa;
+    position: absolute;
+    top: -30px;
+    left: -13px;
+    transform: rotate(90deg);
+}
+.discover .discover-button{
+    color: black;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 4px;
+    border: 1px solid grey;
+    width: 58%;
+    height: 65px;
+    position: relative;
+    transition: .3s ease
+}
+.discover .discover-button:after{
+    content: '';
+    background-color: black;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -5px;
+    left: 0
+}
+.discover .discover-button:before{
+    content: '';
+    background-color: black;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: -5px;
+    left: 0
+}
+.discover .discover-button:hover{
+    background-color: #0b6354;
+    color: white;
+    transition: .3s ease
+}
+.discover .discover-button:hover:after{
+    animation: left-to-right .4s ease forwards;
+    background-color: #0b6354
+}
+.discover .discover-button:hover:before{
+    animation: right-to-left .7s ease forwards;
+    background-color: #0b6354
+}
+.discover .inner-right{
+    position: relative;
+    width: 64%;
+    margin-left: auto
+}
+.discover .inner-right .discover-video-button{
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    background: #0b6354;
+    width: 120px;
+    height: 120px;
+    font-size: 70px;
+    border-radius: 50%;
+    transition: .4s ease;
+}
+
+.discover .inner-right .discover-video-button:hover{
+    transform: scale(0.9, 0.9);
+    transition: .3s ease 
+}
+
+/* ================OFFER SLIDE================= */
+.offer-slide .slide-item{
+    cursor: pointer;
+}
+.offer-slide .background{
+    overflow: hidden;
+    width: 95%
+}
+.offer-slide .slide-item:focus{
+    outline: none;
+}
+.offer-slide .slide-item img{
+    height: auto;
+    transition: .3s ease;
+}
+.offer-slide .slide-item img:hover{
+    transform: scale(1.1, 1.1);
+    transition: .3s ease
+}
+.offer-slide .background{
+    position: relative
+}
+.offer-slide .date{
+    font-family: 'Sarabun';
+    letter-spacing: 2px;
+    font-size: 15px;
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    backdrop-filter: blur(8px);
+    width: 50%;
+    height: 12%
+}
+.offer-slide .slide-item h3{
+    font-family: 'Sarabun';
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin: 1rem 0
+}
+.offer-slide .slide-item h1{
+    font-size: 30px
+}
+.offer-slide .slide-item p{
+    margin: 1rem 0
+}
+.offer-slide .slide-item .read-more{
+    font-family: "sarabun";
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative
+}
+.offer-slide .slide-item .read-more:after{
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+.offer-slide .slide-item .read-more:before{
+    content: '';
+    background-color: white;
+    width: 0;
+    height: 4px;
+    position: absolute;
+    bottom: -5px;
+    left: 0
+}
+.offer-slide .slide-item .read-more:hover:after{
+    animation: left-to-right .4s ease forwards
+}
+.offer-slide .slide-item .read-more:hover:before{
+    animation: right-to-left .6s ease forwards
+}
+/* ================INFORMATION SECTION================ */
+.information-section{
+    position: relative;
+    padding-top: 3rem;
+}
+.information-inner-left{
+    width: 30% !important;
+    padding-right: 0 !important;
+    padding-top: 3rem
+}
+.information-center{
+    width: 45%;
+    display: flex;
+    justify-content: center
+}
+.information-center iframe{
+    border-radius: 50%;
+    width: 600px;
+    height: 600px;
+}
+.information-right{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.information-section a{
+    color: #bababa;
+    transition: .3s ease;
+}
+.information-section a:hover{
+    color: white;
+    transition: .3s ease;
+}
+/* ==============FOOTER================== */
+.footer{
+    height: 50vh;
+    background-color:white;
+    position: relative;
+    align-items: center;
+    padding: 0 5rem
+}
+.footer .footer-logo,
+.footer .list,
+.footer .link,
+.footer .input{
+    width: 22%
+}
+.footer .footer-logo{
+    height: 24vh;
+}
+.footer .footer-logo img{
+    width: 250px;
+    height: auto;
+}
+.footer a{  transition: .3s ease}
+.footer a:hover{
+    color: #0b6354;
+    transition: .3s ease
+}
+.footer .input .type{
+    width: 80%;
+    border-bottom: 1px solid grey;
+    margin-bottom: 30px
+}
+.footer .input .type:focus{
+    outline: none;
+}
+.footer .input .submit{
+    width: 40px;
+    height: 40px;
+    background-color: #0b6354;
+    border-radius: 50%;
+    color: white;
+    transition: .3s ease
+}
+.footer .input .submit:hover{
+    transform: scale(.9, .9);
+    transition: .3s ease
+}
+.footer .input .options{
+    line-height: 0
+}
+.footer .input .options .option-items{
+    height: 30px;
+    display: flex;
+    align-items: center
+}
+.footer .input label{
+    width: 13px;
+    margin-right: .5rem
+}
+.footer .input p{
+    margin-right: .5rem
+}
+.footer .input a{
+    margin-right: .5rem
+}
+.black-logo{display: none}
+/* ==============SOCIAL POPUP================== */
+.social{
+    height: 6vh;
+    width: 26vw;
+    right: -142px;
+    top: 50%;
+    transform: rotate(-90deg);
+}
+.social li{
+    font-family: "Forum";
+    color: white;
+    transition: .3s ease;
+    font-size: 25px;
+    display: inline-block;
+    position: relative;
+    margin-right: 25px;
+}
+.scroll-top{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #0b6354;
+    color: white;
+    transition: .3s ease
+}
+.scroll-top:focus{ outline: none}
+.scroll-top:hover{
+    transform: scale(.9, .9);
+    transition: .3s ease
+}
+.social li:after{
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.social li:before{
+    content: '';
+    background-color: white;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.social li:hover:after{
+    animation: left-to-right .4s ease forwards;
+}
+.social li:hover:before{
+    animation: right-to-left .7s ease forwards;
+}

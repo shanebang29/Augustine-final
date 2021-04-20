@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augustine</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="JS/slickjs/slick/slick.css">
+    <link rel="stylesheet" href="CSS/augustineCSS.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="CSS/FontAwesomePro/FontAwesome.Pro.5.15.2.Web/css/all.css">
+    <!-- FONT-FAMILY -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- =================NAVIGATION BAR========================== -->
+    <nav class="bg-gray-800">
+        <div class="max-w-7x px-2 sm:px-6 lg:px-8">
+            
+            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex-shrink-0 flex items-center">
+                    <i class="fas fa-user hidden"></i>
+                    <a href="" class="hidden responsive">Sign in</a>
+                    <img class="hidden lg:block h-8 w-auto" src="IMG/logo-augustine-white.png" alt="logo">
+                    <img class="black-logo" src="img/logo-black.png" alt="">
+                </div>
+                <!-- ======DROP DOWN MENU========== -->
+                <div class="dropdown-menu ml-auto flex flex-row h-8">
+                    <p class="open-menu">Menu</p>
+                    <p class="close-menu">Close</p>
+                    <button class="rounded-full ml-3">
+            <i class="fal fa-times"></i>
+          </button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <div class="dropdown-inner">
+        <div class="menu flex content-center">
+            <ul class="list-none">
+                <li><a href="">Home</a></li>
+                <li><a href="">Rooms</a></li>
+                <li><a href="">Pages</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Landing</a></li>
+            </ul>
+        </div>
+        <div class="symbolic-image flex flex-col items-center justify-center">
+            <div class="image">
+                <img src="IMG/dropdown-background.jpg" alt="">
+            </div>
+            <div class="image-capture text-left">
+                <p>Hotel lobby at L’hotel Oriental</p> 
+            </div>
+        </div>
+    </div>
+    <!-- =======================BOOK-SECTION=================================== -->
+    <div class="container book-section grid grid-cols-3 sm\:grid-cols-1 mx-auto">
+        <div class="slide col-span-2 sm\:col-span-1">
+            <div class="slide-item">
+                <div class="slide-title">
+                    <h1>Comfort Just For You.</h1>
+                    <p>Welcome To Augustine, your new favorite getaway spot</p>
+                </div>
+            </div>
+            <div class="slide-item">
+                    <h1>A Simply Sublime Stay.</h1>
+                    <p>Welcome To Augustine, your new favorite getaway spot</p>
+            </div>
+            <div class="slide-item">
+                <div class="slide-title">
+                    <h1>It's Time to Get Cozy.</h1>
+                    <p>Welcome To Augustine, your new favorite getaway spot</p>
+                </div>
+            </div>
+        </div>
+        
+            <!-- =============DATE PICKER================ -->
+        <div class="date-picker  flex flex-col justify-center items-center">
+            <p>Book Your Room</p>
+            <div class="flex items-center justify-center bg-gray-200 ">
+                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+                <style>
+                    [x-cloak] {
+                        display: none;
+                    }
+                </style>
+
+                <div class="antialiased sans-serif">
+                    <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+                        <div class="container mx-auto px-4 py-2 md:py-10">
+                            <div class="mb-5 w-auto">
+
+                                <label for="datepicker" class="font-bold mb-1 text-gray-700 block">CHECK-IN</label>
+                                <div class="relative">
+                                    <input type="hidden" name="date" x-ref="date">
+                                    <input type="text" readonly x-model="datepickerValue" @click="showDatepicker = !showDatepicker" @keydown.escape="showDatepicker = false" class="w-full pl-4 pr-10 py-3 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                                        placeholder="Select date">
+
+                                    <div class="absolute top-0 right-0 px-3 py-2">
+                                        <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    </div>
+
+
+                                    <!-- <div x-text="no_of_days.length"></div>
+                                <div x-text="32 - new Date(year, month, 32).getDate()"></div>
+                                <div x-text="new Date(year, month).getDay()"></div> -->
+
+                                    <div class="bg-white mt-12 rounded-lg shadow p-4 absolute top-0 left-0" style="width: 17rem" x-show.transition="showDatepicker" @click.away="showDatepicker = false">
+
+                                        <div class="flex justify-between items-center mb-2">
+                                            <div>
+                                                <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
+                                                <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full" :class="{'cursor-not-allowed opacity-25': month == 0 }" :disabled="month == 0 ? true : false" @click="month--; getNoOfDays()">
+                                                <svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                                </svg>  
+                                            </button>
+                                                <button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full" :class="{'cursor-not-allowed opacity-25': month == 11 }" :disabled="month == 11 ? true : false" @click="month++; getNoOfDays()">
+                                                <svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                                </svg>									  
+                                            </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-wrap mb-3 -mx-1">
+                                            <template x-for="(day, index) in DAYS" :key="index">	
+                                            <div style="width: 14.26%" class="px-1">
+                                                <div
+                                                    x-text="day" 
+                                                    class="text-gray-800 font-medium text-center text-xs"></div>
+                                            </div>
+                                        </template>
+                                        </div>
+
+                                        <div class="flex flex-wrap -mx-1">
+                                            <template x-for="blankday in blankdays">
+                                            <div 
+                                                style="width: 14.28%"
+                                                class="text-center border p-1 border-transparent text-sm"	
+                                            ></div>
+                                        </template>
+                                            <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">	
+                                            <div style="width: 14.28%" class="px-1 mb-1">
+                                                <div
+                                                    @click="getDateValue(date)"
+                                                    x-text="date"
+                                                    class="cursor-pointer text-center text-sm leading-none rounded-full leading-loose transition ease-in-out duration-100"
+                                                    :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }"	
+                                                ></div>
+                                            </div>
+                                        </template>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                        <!-- =========================SCRIPT FOR DATE-PICKER======================== -->
+                    <script>
+                        const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                        const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+                        function app() {
+                            return {
+                                showDatepicker: false,
+                                datepickerValue: '',
+
+                                month: '',
+                                year: '',
+                                no_of_days: [],
+                                blankdays: [],
+                                days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+
+                                initDate() {
+                                    let today = new Date();
+                                    this.month = today.getMonth();
+                                    this.year = today.getFullYear();
+                                    this.datepickerValue = new Date(this.year, this.month, today.getDate()).toDateString();
+                                },
+
+                                isToday(date) {
+                                    const today = new Date();
+                                    const d = new Date(this.year, this.month, date);
+
+                                    return today.toDateString() === d.toDateString() ? true : false;
+                                },
+
+                                getDateValue(date) {
+                                    let selectedDate = new Date(this.year, this.month, date);
+                                    this.datepickerValue = selectedDate.toDateString();
+
+                                    this.$refs.date.value = selectedDate.getFullYear() + "-" + ('0' + selectedDate.getMonth()).slice(-2) + "-" + ('0' + selectedDate.getDate()).slice(-2);
+
+                                    console.log(this.$refs.date.value);
+
+                                    this.showDatepicker = false;
+                                },
+
+                                getNoOfDays() {
+                                    let daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
+
+                                    // find where to start calendar day of week
+                                    let dayOfWeek = new Date(this.year, this.month).getDay();
+                                    let blankdaysArray = [];
+                                    for (var i = 1; i <= dayOfWeek; i++) {
+                                        blankdaysArray.push(i);
+                                    }
+
+                                    let daysArray = [];
+                                    for (var i = 1; i <= daysInMonth; i++) {
+                                        daysArray.push(i);
+                                    }
+
+                                    this.blankdays = blankdaysArray;
+                                    this.no_of_days = daysArray;
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="flex items-center justify-center bg-gray-200 ">
+                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+                <style>
+                    [x-cloak] {
+                        display: none;
+                    }
+                </style>
+
+                <div class="antialiased sans-serif">
+                    <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+                        <div class="container mx-auto px-4 py-2 md:py-10">
+                            <div class="mb-5 w-auto">
+
+                                <label for="datepicker" class="font-bold mb-1 text-gray-700 block">CHECK-OUT</label>
+                                <div class="relative">
+                                    <input type="hidden" name="date" x-ref="date">
+                                    <input type="text" readonly x-model="datepickerValue" @click="showDatepicker = !showDatepicker" @keydown.escape="showDatepicker = false" class="w-full pl-4 pr-10 py-3 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                                        placeholder="Select date">
+
+                                    <div class="absolute top-0 right-0 px-3 py-2">
+                                        <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    </div>
+
+
+                                    <!-- <div x-text="no_of_days.length"></div>
+                                <div x-text="32 - new Date(year, month, 32).getDate()"></div>
+                                <div x-text="new Date(year, month).getDay()"></div> -->
+
+                                    <div class="bg-white mt-12 rounded-lg shadow p-4 absolute top-0 left-0" style="width: 17rem" x-show.transition="showDatepicker" @click.away="showDatepicker = false">
+
+                                        <div class="flex justify-between items-center mb-2">
+                                            <div>
+                                                <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
+                                                <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full" :class="{'cursor-not-allowed opacity-25': month == 0 }" :disabled="month == 0 ? true : false" @click="month--; getNoOfDays()">
+                                                <svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                                </svg>  
+                                            </button>
+                                                <button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full" :class="{'cursor-not-allowed opacity-25': month == 11 }" :disabled="month == 11 ? true : false" @click="month++; getNoOfDays()">
+                                                <svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                                </svg>									  
+                                            </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-wrap mb-3 -mx-1">
+                                            <template x-for="(day, index) in DAYS" :key="index">	
+                                            <div style="width: 14.26%" class="px-1">
+                                                <div
+                                                    x-text="day" 
+                                                    class="text-gray-800 font-medium text-center text-xs"></div>
+                                            </div>
+                                        </template>
+                                        </div>
+
+                                        <div class="flex flex-wrap -mx-1">
+                                            <template x-for="blankday in blankdays">
+                                            <div 
+                                                style="width: 14.28%"
+                                                class="text-center border p-1 border-transparent text-sm"	
+                                            ></div>
+                                        </template>
+                                            <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">	
+                                            <div style="width: 14.28%" class="px-1 mb-1">
+                                                <div
+                                                    @click="getDateValue(date)"
+                                                    x-text="date"
+                                                    class="cursor-pointer text-center text-sm leading-none rounded-full leading-loose transition ease-in-out duration-100"
+                                                    :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }"	
+                                                ></div>
+                                            </div>
+                                        </template>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center bg-gray-200 ">
+                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+                <style>
+                    [x-cloak] {
+                        display: none;
+                    }
+                </style>
+
+                <div class="antialiased sans-serif">
+                    <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+                        <div class="container mx-auto px-4 py-2 md:py-10">
+                            <div class="mb-5 w-auto">
+
+                                <label for="datepicker" class="font-bold mb-1 text-gray-700 block">ROOMS</label>
+                                <div class="relative">
+                                    <input type="hidden" name="date" x-ref="date">
+                                    <input type="text" readonly x-model="datepickerValue" @click="showDatepicker = !showDatepicker" @keydown.escape="showDatepicker = false" class="w-full pl-4 pr-10 py-3 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                                        placeholder="Select date">
+
+                                    <div class="absolute top-0 right-0 px-3 py-2">
+                                        <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    </div>
+
+
+                                    <!-- <div x-text="no_of_days.length"></div>
+                                <div x-text="32 - new Date(year, month, 32).getDate()"></div>
+                                <div x-text="new Date(year, month).getDay()"></div> -->
+
+                                    <div class="bg-white mt-12 rounded-lg shadow p-4 absolute top-0 left-0" style="width: 17rem" x-show.transition="showDatepicker" @click.away="showDatepicker = false">
+
+                                        <div class="flex justify-between items-center mb-2">
+                                            <div>
+                                                <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
+                                                <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full" :class="{'cursor-not-allowed opacity-25': month == 0 }" :disabled="month == 0 ? true : false" @click="month--; getNoOfDays()">
+                                                <svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                                </svg>  
+                                            </button>
+                                                <button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full" :class="{'cursor-not-allowed opacity-25': month == 11 }" :disabled="month == 11 ? true : false" @click="month++; getNoOfDays()">
+                                                <svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                                </svg>									  
+                                            </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-wrap mb-3 -mx-1">
+                                            <template x-for="(day, index) in DAYS" :key="index">	
+                                            <div style="width: 14.26%" class="px-1">
+                                                <div
+                                                    x-text="day" 
+                                                    class="text-gray-800 font-medium text-center text-xs"></div>
+                                            </div>
+                                        </template>
+                                        </div>
+
+                                        <div class="flex flex-wrap -mx-1">
+                                            <template x-for="blankday in blankdays">
+                                            <div 
+                                                style="width: 14.28%"
+                                                class="text-center border p-1 border-transparent text-sm"	
+                                            ></div>
+                                        </template>
+                                            <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">	
+                                            <div style="width: 14.28%" class="px-1 mb-1">
+                                                <div
+                                                    @click="getDateValue(date)"
+                                                    x-text="date"
+                                                    class="cursor-pointer text-center text-sm leading-none rounded-full leading-loose transition ease-in-out duration-100"
+                                                    :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }"	
+                                                ></div>
+                                            </div>
+                                        </template>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center bg-gray-200 ">
+                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+                <style>
+                    [x-cloak] {
+                        display: none;
+                    }
+                </style>
+
+                <div class="antialiased sans-serif">
+                    <div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+                        <div class="container mx-auto px-4 py-2 md:py-10">
+                            <div class="mb-5 w-auto">
+
+                                <label for="datepicker" class="font-bold mb-1 text-gray-700 block">GUESTS</label>
+                                <div class="relative">
+                                    <input type="hidden" name="date" x-ref="date">
+                                    <input type="text" readonly x-model="datepickerValue" @click="showDatepicker = !showDatepicker" @keydown.escape="showDatepicker = false" class="w-full pl-4 pr-10 py-3 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                                        placeholder="Select date">
+
+                                    <div class="absolute top-0 right-0 px-3 py-2">
+                                        <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    </div>
+
+
+                                    <!-- <div x-text="no_of_days.length"></div>
+                                <div x-text="32 - new Date(year, month, 32).getDate()"></div>
+                                <div x-text="new Date(year, month).getDay()"></div> -->
+
+                                    <div class="bg-white mt-12 rounded-lg shadow p-4 absolute top-0 left-0" style="width: 17rem" x-show.transition="showDatepicker" @click.away="showDatepicker = false">
+
+                                        <div class="flex justify-between items-center mb-2">
+                                            <div>
+                                                <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
+                                                <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full" :class="{'cursor-not-allowed opacity-25': month == 0 }" :disabled="month == 0 ? true : false" @click="month--; getNoOfDays()">
+                                                <svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                                </svg>  
+                                            </button>
+                                                <button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full" :class="{'cursor-not-allowed opacity-25': month == 11 }" :disabled="month == 11 ? true : false" @click="month++; getNoOfDays()">
+                                                <svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                                </svg>									  
+                                            </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-wrap mb-3 -mx-1">
+                                            <template x-for="(day, index) in DAYS" :key="index">	
+                                            <div style="width: 14.26%" class="px-1">
+                                                <div
+                                                    x-text="day" 
+                                                    class="text-gray-800 font-medium text-center text-xs"></div>
+                                            </div>
+                                        </template>
+                                        </div>
+
+                                        <div class="flex flex-wrap -mx-1">
+                                            <template x-for="blankday in blankdays">
+                                            <div 
+                                                style="width: 14.28%"
+                                                class="text-center border p-1 border-transparent text-sm"	
+                                            ></div>
+                                        </template>
+                                            <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">	
+                                            <div style="width: 14.28%" class="px-1 mb-1">
+                                                <div
+                                                    @click="getDateValue(date)"
+                                                    x-text="date"
+                                                    class="cursor-pointer text-center text-sm leading-none rounded-full leading-loose transition ease-in-out duration-100"
+                                                    :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }"	
+                                                ></div>
+                                            </div>
+                                        </template>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+            <div class="around-button">
+                <button class="book">AVAILABILITY</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- =======================OFFER SECTION==================================== -->
+
+    <div class="offer-section top-section grid grid-col-1 gap-3 mx-auto py-40">
+        <div class="container title mx-auto text-center pb-16 px-40 mb-5">
+            <h4>EXCLUSIVE OFFER</h4>
+            <h1>Welcome to L'hotel Augustine</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Pellentesque gravida massa at erat iaculis, ut iaculis magna pulvinar. 
+                Donec quis odio cursus, consequat erat id.</p>
+        </div>
+        <div class="inner flex flex-row mx-auto grid grid-cols-3 sm\:flex-col">
+            <div class="inner-left text-right flex  items-center justify-center flex-col">
+                <div class="text-container pl-32">
+                    <a href=""><h2>24h Front Desk</h2></a>
+                    <p>Lorem ipsum dolor sit amet, in nam denique suavitateputo repudiandae</p>
+                    <a href=""><h2>Airport Transfers</h2></a>
+                    <p>Lorem ipsum dolor sit amet, in nam denique suavitateputo repudiandae</p>
+                    <a href=""><h2>Spa & Wellness</h2></a>
+                    <p>Lorem ipsum dolor sit amet, in nam denique suavitateputo repudiandae</p>
+                </div>
+                
+            </div>
+            <div class="inner-center flex items-center justify-center">
+                <img src="IMG/welcome-banner.png" alt="">
+            </div>
+            <div class="inner-right text-left flex items-center justify-center flex-col">
+                <div class="text-container pr-32">
+                    <a href=""><h2>Restaurants</h2></a>
+                    <p>Lorem ipsum dolor sit amet, in nam denique suavitateputo repudiandae</p>
+                    <a href=""><h2>Outdoor Acitivities</h2></a>
+                    <p>Lorem ipsum dolor sit amet, in nam denique suavitateputo repudiandae</p>
+                    <a href=""><h2>Spa & Wellness</h2></a>
+                    <p>Lorem ipsum dolor sit amet, in nam denique suavitateputo repudiandae</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- =======================OFFER EXAMPLE SECTION========================= -->
+    <div class="offer-section offer-example mx-auto">
+        <div class="container title text-left pb-16 mb-5">
+            <h4 class="offer-slide-title">EXCLUSIVE OFFER</h4>
+            <h1>Find the Perfect Suite</h1>
+        </div>
+        <div class="card flex flex-row grid grid-cols-3 grid-flow-row gap-20">
+            <div class="card-detail">
+                <div class="background">
+                    <a href=""><img src="IMG/book-banner-1.jpg" alt=""></a>
+                    <button class="price tracking-wide">FROM $59</button>
+                </div>
+                <h1 class="mt-4">Twin Room</h1>
+                <div class="room-detail flex flex-row">
+                    <p class="capacity tracking-widest tracking-widest">Capacity: <p class="white tracking-widest"> 1-2 PERSONS</p></p>
+                    <p class="size tracking-wide ml-4 tracking-widest">Size: <p class="white tracking-widest"> 42M2</p></p>
+                </div>
+                <p class="my-6">Lorem ipsum dolor sit amet, in nam denique suavitate repudiandae, 
+                    homero dictas omnesque duo et. Novum dignissim consectetuer ei mel. 
+                    Ne patrioque consequat persequeris
+                </p>
+                <button class="book-suite tracking-widest">BOOK SUITE</button>
+            </div>
+            <div class="card-detail">
+                <div class="background">
+                    <a href=""><img src="IMG/book-banner-2.jpg" alt=""></a>
+                    <button class="price tracking-wide">FROM $63</button>
+                </div>
+                <h1 class="mt-4">Double-double</h1>
+                <div class="room-detail flex flex-row">
+                    <p class="capacity tracking-widest tracking-widest">Capacity: <p class="white tracking-widest"> 1-3 PERSONS</p></p>
+                    <p class="size tracking-wide ml-4 tracking-widest">Size: <p class="white tracking-widest"> 48M2</p></p>
+                </div>
+                <p class="my-6">Lorem ipsum dolor sit amet, in nam denique suavitate repudiandae, 
+                    homero dictas omnesque duo et. Novum dignissim consectetuer ei mel. 
+                    Ne patrioque consequat persequeris
+                </p>
+                <button class="book-suite tracking-widest">BOOK SUITE</button>
+            </div>
+            <div class="card-detail">
+                <div class="background">
+                    <a href=""><img src="IMG/book-banner-3.jpg" alt=""></a>
+                    <button class="price tracking-widest">FROM $49</button>
+                </div>
+                <h1 class="mt-4">Mini Suite</h1>
+                <div class="room-detail flex flex-row">
+                    <p class="capacity tracking-widest ">Capacity: <p class="white tracking-widest"> 1-3 PERSONS</p></p>
+                    <p class="size tracking-wide ml-4 tracking-widest ">Size: <p class="white tracking-widest"> 34M2</p></p>
+
+                </div>
+                <p class="my-6">Lorem ipsum dolor sit amet, in nam denique suavitate repudiandae, 
+                    homero dictas omnesque duo et. Novum dignissim consectetuer ei mel. 
+                    Ne patrioque consequat persequeris
+                </p>
+                <button class="book-suite tracking-widest">BOOK SUITE</button>
+            </div>
+        </div>
+    </div>
+    <!-- =======================DISCOVER SECTION 1================================== -->
+    <div class="discover flex flex-row offer-section mx-auto py-20">
+        <div class="inner-left flex flex-col justify-center text-left px-20">
+            <h4>LUXURY APARTMENTS</h4>
+            <h1 class="mt-4">Get Cozy.</h1>
+            <p class="my-6 mb-8 leading-10 text-lg">Dictum varius duis at consectetu ut lorem donec massa sapien faucibus. 
+                Tincidunt arcu non sodales neque sod consec tetur.</p>
+            
+            <button class="discover-button">DISCOVER MORE</button>
+
+        </div>
+        <div class="inner-right">
+            <img src="IMG/discovery-thumbnail.jpg" alt="">
+            <button class="discover-video-button"><i class="fal fa-caret-right"></i></button>
+        </div>
+    </div>
+    <!-- =======================OFFER SLIDE============================== -->
+    <div class="offer-slide-header offer-section mx-auto offer-example">
+        <div class="container title mx-auto text-center pb-16 px-40 mb-5">
+            <h4>BROWSE THROUGH</h4>
+            <h1>Our Latest Offers</h1>
+        </div>
+        <div class="offer-slide">
+            <div class="slide-item">
+                <div class="background">
+                    <img src="img/offer-slide-1.jpg" alt="">
+                    <button class="date">OCTOBER 30, 2020</button>
+                </div>
+                <h3 class="tracking-wider">NEWS & OFFERS</h3>
+                <h1>Mind and body relaxation</h1>
+                <p>Quam viverra orci sagittis eu volutpat odio facilisis. 
+                    Sapien eget mi proin sed libero enim sed. 
+                    Lobortis scelerisque fermentum. 
+                </p>
+                <button class="read-more tracking-widest">READ MORE</button>
+            </div>
+            <div class="slide-item">
+                <div class="background">
+                    <img src="img/offer-slide-2.jpg" alt="">
+                    <button class="date">OCTOBER 30, 2020</button>
+                </div>
+                <h3 class="tracking-wider">NEWS & OFFERS</h3>
+                <h1>Mind and body relaxation</h1>
+                <p>Quam viverra orci sagittis eu volutpat odio facilisis. 
+                    Sapien eget mi proin sed libero enim sed. 
+                    Lobortis scelerisque fermentum. 
+                </p>
+                <button class="read-more tracking-widest">READ MORE</button>
+            </div>
+            <div class="slide-item">
+                <div class="background">
+                    <img src="img/offer-slide-3.jpg" alt="">
+                    <button class="date">OCTOBER 30, 2020</button>
+                </div>
+                <h3 class="tracking-wider">NEWS & OFFERS</h3>
+                <h1>Mind and body relaxation</h1>
+                <p>Quam viverra orci sagittis eu volutpat odio facilisis. 
+                    Sapien eget mi proin sed libero enim sed. 
+                    Lobortis scelerisque fermentum. 
+                </p>
+                <button class="read-more tracking-widest">READ MORE</button>
+            </div>
+            <div class="slide-item">
+                <div class="background">
+                    <img src="img/offer-slide-4.jpg" alt="">
+                    <button class="date">OCTOBER 30, 2020</button>
+                </div>
+                <h3 class="tracking-wider">NEWS & OFFERS</h3>
+                <h1>Mind and body relaxation</h1>
+                <p>Quam viverra orci sagittis eu volutpat odio facilisis. 
+                    Sapien eget mi proin sed libero enim sed. 
+                    Lobortis scelerisque fermentum. 
+                </p>
+                <button class="read-more tracking-widest">READ MORE</button>
+            </div>
+            <div class="slide-item">
+                <div class="background">
+                    <img src="img/offer-slide-1.jpg" alt="">
+                    <button class="date">OCTOBER 30, 2020</button>
+                </div>
+                <h3 class="tracking-wider">NEWS & OFFERS</h3>
+                <h1>Mind and body relaxation</h1>
+                <p>Quam viverra orci sagittis eu volutpat odio facilisis. 
+                    Sapien eget mi proin sed libero enim sed. 
+                    Lobortis scelerisque fermentum. 
+                </p>
+                <button class="read-more tracking-widest">READ MORE</button>
+            </div>
+            <div class="slide-item">
+                <div class="background">
+                    <img src="img/offer-slide-2.jpg" alt="">
+                    <button class="date">OCTOBER 30, 2020</button>
+                </div>
+                <h3 class="tracking-wider">NEWS & OFFERS</h3>
+                <h1>Mind and body relaxation</h1>
+                <p>Quam viverra orci sagittis eu volutpat odio facilisis. 
+                    Sapien eget mi proin sed libero enim sed. 
+                    Lobortis scelerisque fermentum. 
+                </p>
+                <button class="read-more tracking-widest">READ MORE</button>
+            </div>
+            <div class="slide-item">
+                <div class="background">
+                    <img src="img/offer-slide-3.jpg" alt="">
+                    <button class="date">OCTOBER 30, 2020</button>
+                </div>
+                <h3 class="tracking-wider">NEWS & OFFERS</h3>
+                <h1>Mind and body relaxation</h1>
+                <p>Quam viverra orci sagittis eu volutpat odio facilisis. 
+                    Sapien eget mi proin sed libero enim sed. 
+                    Lobortis scelerisque fermentum. 
+                </p>
+                <button class="read-more tracking-widest">READ MORE</button>
+            </div>
+            <div class="slide-item">
+                <div class="background">
+                    <img src="img/offer-slide-4.jpg" alt="">
+                    <button class="date">OCTOBER 30, 2020</button>
+                </div>
+                <h3 class="tracking-wider">NEWS & OFFERS</h3>
+                <h1>Mind and body relaxation</h1>
+                <p>Quam viverra orci sagittis eu volutpat odio facilisis. 
+                    Sapien eget mi proin sed libero enim sed. 
+                    Lobortis scelerisque fermentum. 
+                </p>
+                <button class="read-more tracking-widest">READ MORE</button>
+            </div>
+        </div>
+    </div>
+    <!-- =======================DICOVER SECTION 2================================== -->
+    <div class="discover flex flex-row-reverse offer-section mx-auto py-20">
+        <div class="inner-left flex flex-col justify-center text-left px-20">
+            <h4>WELLNESS & SPA</h4>
+            <h1 class="mt-4">Let's Relax.</h1>
+            <p class="my-6 mb-8 leading-10 text-lg">Dictum varius duis at consectetu ut lorem donec massa sapien faucibus. 
+                Tincidunt arcu non sodales neque sod consec tetur.</p>
+            
+            <button class="discover-button">DISCOVER MORE</button>
+
+        </div>
+        <div class="inner-right mr-auto">
+            <img src="IMG/discover-thumbnail-2.jpg" alt="">
+        </div>
+    </div>
+    <!-- ========================INFORMATION SECTION================================= -->
+    <div class="information-section flex flex-row offer-section offer-example mx-auto">
+        <div class="information-inner-left container title text-left pb-16 mb-5 pr-16">
+            <h4 class="offer-slide-title">GLOBAL HOTEL CHAIN</h4>
+            <h1>Our Locations</h1>
+            <p class="mt-4 mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Ut elit tellus, luctus nec ullamcorper mattis.</p>
+            <div class="address flex flex-row items-center text-xl mb-6">
+                <i class="fal fa-map-marker-alt"></i>
+                <div class="flex flex-col ml-6">
+                    <a href="">Rue du Lustincone 20270 France</a>
+                    <a href="">Listinco 20270 Aléria France</a>
+                </div>
+            </div>
+            <div class="contact flex flex-row items-center text-xl">
+                <i class="fal fa-envelope"></i>
+                <div class="flex flex-col ml-4">
+                    <a href="">augustine@qodeinteractive.com </a>
+                    <a href="">augustine@qode.com</a>
+                    <a href="">augustineqode@interactive.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="information-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23682.48213721026!2d9.515555818324442!3d42.10082544136044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d9e0e582e3a601%3A0x9f08385174d645fe!2zTXVzw6llIGTigJlhcmNow6lvbG9naWUgZCdBbGVyaWE!5e0!3m2!1svi!2s!4v1618829256550!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="information-right">
+            <img src="img/footer-banner.png" alt="">
+        </div>
+    </div>
+    <!-- ==========================FOOTER======================================= -->
+    <div class="footer flex flex-row mx-auto">
+        <div class="footer-logo mx-auto items-start">
+            <img src="img/logo-augustine-footer.png" alt="">
+        </div>
+        <div class="list flex flex-col mx-auto ">
+            <ul class="leading-10">
+                <li><a href="">Home</a> </li>
+                <li><a href="">About Us</a> </li>
+                <li><a href="">Activities</a> </li>
+                <li><a href="">Contact Us</a> </li>
+                <li><a href="">Cart</a> </li>
+                <li><a href="">Checkout</a> </li>
+            </ul>
+        </div>
+        <div class="link flex flex-col mx-auto pr-24 leading-10">
+            <a href="">Turgut Ozal Millet Cd.
+                23466 Sjsa Niyadak 897
+                Istanbul, Turkey
+            </a>
+            <a href="">0225 5582 55 55</a>
+            <a href="">0055 5486 55 56</a>
+            <a href="">augustine@qode.com</a>
+            <a href="">augustine@qodeinteractive.com</a>
+        </div>
+        <div class="input mx-auto leading-10">
+            <h1>Newsletter</h1>
+            <div class="flex flex-row">
+                <input class="type" type="text" placeholder="Sign-up for our newsletter">
+                <button class="submit">
+                    <i class="fal fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="flex flex-row options">
+                <div class="flex flex-row option-items">
+                    <label class="container">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <p>News & offers</p>
+                </div>
+                <div class="flex flex-row option-items">
+                    <label class="container">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <p>Events</p>
+                </div>
+                <div class="flex flex-row option-items">
+                    <label class="container">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <p>Private hire</p>
+                </div>
+            </div>
+            <h1>Follow us:</h1>
+            <div class="flex flex-row">
+                <a href="">Fb.</a>
+                <a href="">Ig.</a>
+                <a href="">Tw.</a>
+            </div>
+        </div>
+    </div>
+    <!-- ======================RIGHT POPUP===================== -->
+    <button class="scroll-top fixed" onclick="">
+        <i class="fal fa-chevron-up"></i>
+    </button>
+    <div class="social flex flex-col justify-center z-99 fixed">
+        <ul class="">
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">Twitter</a></li>
+        </ul>
+        
+    </div>
+    <!-- ================SLICK JS AND JQUERY================== -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="JS/slickjs/slick/slick.min.js"></script>
+
+    <script src="JS/augustineJs.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+</body>
+
+</html>

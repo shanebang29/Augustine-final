@@ -1,0 +1,159 @@
+@media (max-width: 991px){
+    .bg-gray-800{
+        background-color: white !important;
+        height: 100px;
+        padding: 10px
+    }
+    .bg-gray-800 .hidden.responsive{
+        margin: 0 10rem 0 10px
+    }
+    .bg-gray-800 .justify-center{
+        align-items: center
+    }
+    .dropdown-menu .open-menu{
+        color: black !important
+    }
+    .black-logo{
+        display: block;
+        width: 170px !important;
+        height: auto !important;
+        margin: auto !important;
+    }
+    .bg-gray-800 i,
+    .bg-gray-800 .responsive{
+        display: block;
+    }
+    .offer-section h1{ font-size: 36px !important;}
+    .offer-section .title p{font-size: 16px !important;}
+    .offer-section .inner{
+        display: block;
+    }
+    .offer-section .inner-center {
+        display: none;
+    }
+    .offer-section .inner-left{
+        text-align: left;
+        align-items: flex-start !important
+    }
+    .offer-section .inner-left .text-container{
+        padding-left: 0 !important
+    }
+    .offer-section .inner-left .text-container h2{
+        font-size: 25px;
+    }
+    .offer-section .inner-left .text-containe p{
+        font-size: 16px
+    }
+    .book-section{
+        display: flex !important;
+        flex-direction: column;
+        max-width: 100% !important;
+        max-height: 1200px;
+        height: 1465px;
+        padding: 30px;
+        background-color: transparent;
+    }
+    .book-section .date-picker{
+        max-height: 1000px !important;
+        height: 1000px;
+    }
+    .antialiased .relative input{
+        font-size: 25px
+    }
+    .date-picker p{
+        font-size: 40px !important
+    }
+    .book-section .slide{
+        width: 100% !important
+    }
+    .offer-section.top-section{
+        max-height: 1500px !important;
+        height: 1500px;
+    }
+    .offer-example .card{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .information-section{
+        flex-direction: column !important;
+    }
+    .footer .input .flex{
+        /* flex-direction: column; */
+    }
+    .inner .items-center{
+        padding-right: 80px
+    }
+    .offer-example{
+        max-height: 2500px !important;
+        height: 2500px;
+    }
+    .offer-example .card-detail{
+        width: 100%
+    }
+    .discover{
+        max-height: 1000px !important;
+        height: 1000px;
+        flex-direction: column !important;
+        display: flex !important
+    }
+    .discover .inner-left{
+        width: 100%;
+        height: 500px;
+    }
+    .discover .inner-right{
+        width: 100%;
+    }
+    .discover .inner-right button{
+        font-size: 40px !important
+    }
+    .offer-slide-header{
+        max-height: 700px !important
+    }
+    .offer-slide-header .title{
+        padding: 0 20px
+    }
+    .information-section{
+        max-height: 1800px !important
+    }
+    .information-inner-left{
+        width: 100% !important
+    }
+    .information-center{
+        width: 100%;
+    }
+    .information-right{
+        width: 100%;
+        padding: 20px 0 !important
+    }
+    .footer{
+        flex-direction: column !important;
+        display: flex !important;
+        max-height: 2000px !important;
+        height: 1200px;
+        padding-top: 100px
+    }
+    .footer .list ul,
+    .footer .link {
+        line-height: 50px !important
+    }
+    .footer .footer-logo,
+    .footer .list,
+    .footer .link,
+    .footer .input{
+        width: 100%
+    }
+    .dropdown-inner .symbolic-image{
+        display: none;
+    }
+    .dropdown-inner .menu{
+        padding-left: 50px
+    }
+}
+@media (max-width: 1410px){
+    .discover .inner-left{
+        padding: 0 15px 
+    }
+    .discover .inner-left p{
+        line-height: 20px !important
+    }
+}

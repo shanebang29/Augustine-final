@@ -1,0 +1,1 @@
+Just put "public" folder into your tailwindcss project
